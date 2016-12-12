@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Starter Node and Angular</title>
+
+
+
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+
+	<script src="js/controllers/FacebookController.js"></script>
+	<script src="js/services/FacebookService.js"></script>
+
+	<script src="js/controllers/YoutubeCtrl.js"></script>
+	<script src="js/services/YoutubeService.js"></script>
+
+	<script src="js/controllers/TwitterCtrl.js"></script>
+	<script src="js/services/TwitternService.js"></script>
+
+
+	<script src="js/controllers/MailChimpCtrl.js"></script>
+	<script src="js/services/MailChimpService.js"></script>
+
+
+
+	<script src="js/controllers/SendyCtrl.js"></script>
+	<script src="js/services/SendyService.js"></script>
+
+
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<script data-require="angular.js@1.5.9" data-semver="1.5.9" src="http://rawgithub.com/Ciul/angular-facebook/master/lib/angular-facebook.js"></script>
+
+
+</head>
+<body ng-app="sampleApp" ng-controller="MainController">
+<div class="container">
+
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/"></a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="/mailchimp">Mail Chimp </a></li>
+			<li><a href="/facebook">Facebook</a></li>
+			<li><a href="/youtube">Youtube</a></li>
+			<li><a href="/twitterPage">Twitter</a></li>
+			<li><a href="/sendyPage">Sendy</a></li>
+		</ul>
+	</nav>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ng-view>
+
+
+
+
+	</div>
+
+</div>
+</body>
+</html>

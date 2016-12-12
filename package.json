@@ -1,0 +1,23 @@
+{
+  "name": "starter-node-angular",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "~4.5.1",
+    "express-session": "^1.14.2",
+    "fb": "^1.1.1",
+    "googleapis": "^15.0.0",
+    "method-override": "~2.0.2",
+    "mongoose": "~3.8.0",
+    "morgan": "^1.7.0",
+    "ng-facebook": "^0.1.6",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4",
+    "sendy-api": "^0.1.0",
+    "serve-favicon": "^2.3.2",
+    "youtube-api": "^2.0.4"
+  }
+}

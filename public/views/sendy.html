@@ -1,0 +1,38 @@
+<div id="todo-form" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+            <div class="form-group">
+
+                <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                <input type="text" class="form-control input-lg text-center" placeholder="email" ng-model="formData.email">
+                <input type="text" class="form-control input-lg text-center" placeholder="First Name" ng-model="formData.FNAME">
+                <input type="text" class="form-control input-lg text-center" placeholder="Last Name" ng-model="formData.LNAME">
+                <input type="number" class="form-control input-lg text-center" placeholder="Time Zone" ng-model="formData.TIMEZONE">
+
+
+                <select ng-model="formData.GENDER">
+                    <option ng-repeat="gender in genders" value="{{gender.value}}">{{gender.key}}</option>
+                </select>
+
+            </div>
+
+            <!-- createToDo() WILL CREATE NEW TODOS -->
+            <button type="submit" class="btn btn-primary btn-lg"
+                    data-toggle="modal" data-target="#myModal"
+                    ng-click="createSubscriber()">Create Subscriber</button>
+
+
+            <div class="modal-body" style="padding:0px">
+                <div class="alert alert-{{data.mode}}" style="margin-bottom:0px">
+                    <button type="button" class="close" data-ng-click="close()" >
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                    </button>
+                    <strong>{{data.boldTextTitle}}</strong> {{data.textAlert}}
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

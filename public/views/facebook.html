@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+
+            <div class="page-header">
+                <h1>Hello angular-facebook!</h1>
+            </div>
+
+            <div>
+                <div class="alert alert-info" data-ng-show="salutation">Hello, {{user.name}}</div>
+                <div class="alert alert-warning" data-ng-show="byebye">Bye bye :'(</div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-large" data-ng-show="!logged" data-ng-disabled="!facebookReady" data-ng-click="IntentLogin()">Login with Facebook</button>
+            <button type="button" class="btn btn-danger btn-large" data-ng-show="logged" data-ng-disabled="!facebookReady" data-ng-click="logout()">Logout</button>
+            <button type="button" class="btn btn-danger btn-large" data-ng-show="logged" data-ng-disabled="!facebookReady" data-ng-click="share()">Facebook share</button>
+            <div>
+                <debug val="user"></debug>
+            </div>
+
+        </div>
+    </div>
+</div>
