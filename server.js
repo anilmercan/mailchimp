@@ -6,21 +6,47 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var path = require('path');
 
+
 var passport = require('passport');
 var mongoose = require('mongoose');
 var auth=require('./config/auth');
 var session = require('express-session');
-mongoose.connect('mongodb://mongouser:mongouser@ds119578.mlab.com:19578/anil_deneme');
+var Agenda=require('agenda')
+// config files
+var db = require('./config/db');
+
+mongoose.connect(db.url);
+
+
+var agenda = new Agenda({db: { address: db.url, collection: 'agendaJobs' }})
+
+
+agenda.on('ready', function(){
+
+    agenda.define('printAnalyticsReport', function(job, done) {
+        console.log('Her dakika calısan job basladi')
+    });
+
+    agenda.every('1 minutes', 'printAnalyticsReport');
+})
+
+
 
 
 
 // configuration ===========================================
 	
-// config files
-var db = require('./config/db');
 
 
 
+
+/*
+
+var CronJob = require('cron').CronJob;
+new CronJob('* * * * * *', function() {
+    console.log('You will see this message every second');
+}, null, true, 'America/Los_Angeles');
+*/
 
 var port = process.env.PORT || 8080; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
@@ -30,7 +56,6 @@ app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 
-app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 
 
