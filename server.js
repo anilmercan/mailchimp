@@ -29,7 +29,7 @@ agenda.on('ready', function(){
 
     agenda.every('1 minutes', 'printAnalyticsReport');
 })
-
+agenda.start();
 
 
 
