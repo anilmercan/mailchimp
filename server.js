@@ -27,7 +27,7 @@ agenda.on('ready', function(){
         console.log('Her dakika calısan job basladi')
     });
 
-    agenda.every('1 minutes', 'printAnalyticsReport');
+    agenda.every('1 second', 'printAnalyticsReport');
 })
 agenda.start();
 
